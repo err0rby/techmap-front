@@ -62,7 +62,7 @@ const Profile = () => {
           </li>
         </ul>
       </aside>
-      <main>
+      <main className={styles.main}>
         <Outlet />
       </main>
     </div>
