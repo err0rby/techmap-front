@@ -10,6 +10,7 @@ import ProfileHome from "./components/ProfileHome/ProfileHome";
 import ProfileForms from "./components/ProfileForms/ProfileForms";
 import ProfileTables from "./components/ProfileTables/ProfileTables";
 import ProfileGraphic from "./components/ProfileGraphic/ProfileGraphic";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="graphics" element={<ProfileGraphic />} />
         </Route>
       </Routes>
+      <Footer />
     </>
   );
 }
