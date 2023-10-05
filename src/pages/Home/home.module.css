@@ -54,6 +54,12 @@ h2 {
 
 }
 
+.linker{
+    width: max-content;
+    color: black;
+    text-decoration: none;
+}
+
 .courseBlock {
     transition: 0.3s;
     border-radius: 10px;
