@@ -1,41 +1,42 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom"
-import styles from './signin.module.css'
+import { Link, useNavigate } from "react-router-dom";
+import styles from "./signin.module.css";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
-import eye from '../../assets/icons/eye.png'
+import eye from "../../assets/icons/eye.png";
 
 const SignIn = () => {
-    const dispatch = useDispatch()
-    const navigate = useNavigate()
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-    const [ login, setLogin ] = useState('');
-    const [ password, setPassword] = useState('')
+  const [login, setLogin] = useState("");
+  const [password, setPassword] = useState("");
 
-    const handleSetLogin = (e) => {
-        setLogin(e.target.value)
-    }
-    const handleSetPass = (e) => {
-        setPassword(e.target.value)
-    }
+  const handleSetLogin = (e) => {
+    setLogin(e.target.value);
+  };
+  const handleSetPass = (e) => {
+    setPassword(e.target.value);
+  };
 
-    const handleSignIn = (e) => {
-        e.preventDefult()
-        dispatch()
-        navigate('/')
-    }
+  const handleSignIn = (e) => {
+    e.preventDefult();
+    dispatch();
+    navigate("/");
+  };
 
   return (
     <div className={styles.signIn}>
       <h1>Sign In</h1>
       <div className={styles.inputs}>
-        <form data-testid="form" onSubmit={handleSignIn}>
+        <form data-testid="form" onSubmit={handleSignIn} className={styles.Form}>
           <span>Имя</span>
           <input
             data-testid="login"
             type="text"
             value={login}
             onChange={handleSetLogin}
+            className={styles.Input}
           />
           <div className={styles.password}>
             <span>Пароль</span>
@@ -46,6 +47,7 @@ const SignIn = () => {
             type="password"
             value={password}
             onChange={handleSetPass}
+            className={styles.Input}
           />
           <span className={styles.support}>Забыли пароль?</span>
 
