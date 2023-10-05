@@ -1,0 +1,52 @@
+.profile {
+  min-height: 95vh;
+  display: flex;
+  column-gap: 20px;
+}
+.profile aside {
+  width: 15%;
+  border-right: 1px solid #d0d0d0;
+}
+.list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.list li {
+  width: 100%;
+  padding: 10px;
+  cursor: pointer;
+  border-left: 2px solid transparent;
+  transition: 0.3s;
+}
+.list li a img {
+  width: 24px;
+  height: 24px;
+}
+.list li:hover {
+  border-left: 2px solid blue;
+  background-color: #f0f0f0;
+}
+.list .active {
+  border-left: 2px solid blue;
+  background-color: #f0f0f0;
+}
+.list .active a img {
+  filter: invert(40%);
+}
+.list li a {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+  color: #000;
+  text-decoration: none;
+  list-style-type: none;
+}
