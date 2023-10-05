@@ -1,8 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './home.module.css'
 import firstImg from './phonesMap.png'
+import euro from './europeImg.png'
+import { useDispatch, useSelector } from 'react-redux'
+import { fetchCourses } from '../../features/courseSlice';
 
 const Home = () => {
+
+    const course = useSelector(state => state.course.courses)
+
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        dispatch(fetchCourses());
+    }, [dispatch])
+
+
     return (
         <div>
             <div className={styles.firstRod}>
@@ -19,9 +32,13 @@ const Home = () => {
                 </div>
             </div>
             <div className={styles.secondRod}>
-                <div className={styles.courseBlock}>
-
-                </div>
+                {course.map(item => {
+                    return <div className={styles.courseBlock}>
+                        <img className={styles.blockImg} src={euro} alt='a' />
+                        <p>{item.title}</p>
+                        <p className={styles.textStyle}>{item.description}</p>
+                    </div>
+                })}
             </div>
         </div>
     );
