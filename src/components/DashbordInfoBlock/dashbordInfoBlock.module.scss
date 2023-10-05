@@ -1,0 +1,22 @@
+.dashbordInfoBlock {
+  width: 250px;
+  height: min-content;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  padding: 10px 15px;
+  border-radius: 5px;
+  background-color: #fff;
+  img {
+    object-fit: contain;
+  }
+  div {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+    text-align: end;
+    h3{
+        margin: 0;
+        color: #8f16cb;
+    }
+  }
+}

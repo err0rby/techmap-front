@@ -21,7 +21,7 @@ function App() {
         <Route path="/signUp" element={<SignUp />} />
         <Route path="/course/:id" element={<OneCourse />} />
         <Route path="/profile" element={<Profile />}>
-          <Route path="home" element={<ProfileHome />} />
+          <Route path="" element={<ProfileHome />} />
           <Route path="forms" element={<ProfileForms />} />
           <Route path="tables" element={<ProfileTables />} />
           <Route path="graphics" element={<ProfileGraphic />} />
