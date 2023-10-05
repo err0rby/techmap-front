@@ -17,3 +17,8 @@
 width: 100px;
 height: 40px;
 }
+
+.linker {
+    text-decoration: none;
+    color: gold;
+}
