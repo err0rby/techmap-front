@@ -27,7 +27,7 @@ h1 {
     font-size: 36px;
 }
 
-h2{
+h2 {
     font-size: 26px;
     color: whitesmoke;
 }
@@ -47,20 +47,35 @@ h2{
 }
 
 .secondRod {
+    margin-top: 40px;
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
 
 }
 
 .courseBlock {
-    width: 80%;
+    transition: 0.3s;
+    border-radius: 10px;
+    width: 30%;
     display: flex;
-
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f4f4f4;
 }
 
-.courseCard {
-    height: 150px;
-    width: 20%;
-    background-color: #f4f4f4;
+.courseBlock:hover {
+    transform: scale(1.04);
+}
+
+.blockImg {
+    margin-top: 10px;
+    border-radius: 50%;
+    border: 0;
+}
+
+.textStyle {
+    padding: 10px 25px;
+    text-align: center;
 }
