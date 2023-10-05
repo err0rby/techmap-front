@@ -1,4 +1,6 @@
 import './App.css';
+
+import Home from './pages/Home/Home';
 import SignIn from './components/SignIn/SignIn';
 import SignUp from './components/SignUp/SignUp';
 
