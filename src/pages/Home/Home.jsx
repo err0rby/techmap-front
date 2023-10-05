@@ -4,6 +4,7 @@ import firstImg from './phonesMap.png'
 import euro from './europeImg.png'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchCourses } from '../../features/courseSlice';
+import { Link } from 'react-router-dom'
 
 const Home = () => {
 
@@ -35,12 +36,14 @@ const Home = () => {
                 {course.map(item => {
                     return <div className={styles.courseBlock}>
                         <img className={styles.blockImg} src={euro} alt='a' />
-                        <p>{item.title}</p>
+                        <Link className={styles.linker} to={`/course/${item._id}`}>
+                            <p>{item.title}</p>
+                        </Link>
                         <p className={styles.textStyle}>{item.description}</p>
                     </div>
                 })}
             </div>
-        </div>
+        </div >
     );
 };
 
