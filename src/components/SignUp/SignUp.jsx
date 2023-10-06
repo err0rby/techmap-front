@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./signup.module.css";
 import eye from "../../assets/icons/eye.png";
+import { authSignUp } from "../../features/applicationSlice";
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -33,7 +34,7 @@ const SignUp = () => {
 
   const handleSignUp = (e) => {
     e.preventDefault();
-    dispatch();
+    dispatch(authSignUp({ login, password })); 
     navigate("/");
   };
 
