@@ -4,6 +4,7 @@ import styles from "./signin.module.css";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
 import eye from "../../assets/icons/eye.png";
+import { authSignIn } from "../../features/applicationSlice";
 
 const SignIn = () => {
   const dispatch = useDispatch();
@@ -20,8 +21,8 @@ const SignIn = () => {
   };
 
   const handleSignIn = (e) => {
-    e.preventDefult();
-    dispatch();
+    e.preventDefault();
+    dispatch(authSignIn({login,password}));
     navigate("/");
   };
 
