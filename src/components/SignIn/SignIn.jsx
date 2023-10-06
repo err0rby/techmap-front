@@ -24,7 +24,7 @@ const SignIn = () => {
 
   const handleSignIn = (e) => {
     e.preventDefault();
-    dispatch(authSignIn({ login, password }))
+    dispatch(authSignIn({ login, password }));
     // navigate('/')
   };
 
@@ -56,7 +56,13 @@ const SignIn = () => {
             onChange={handleSetPass}
             className={styles.Input}
           />
-          {error ? <div className={styles.error}><span>! {error}</span></div> : ''}
+          {error ? (
+            <div className={styles.error}>
+              <span>! {error}</span>
+            </div>
+          ) : (
+            ""
+          )}
           <span className={styles.support}>Забыли пароль?</span>
 
           <button data-testid="submit" type="submit">
