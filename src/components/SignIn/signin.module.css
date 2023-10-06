@@ -49,3 +49,10 @@ button{
     cursor: pointer;
     margin-top: 5px;
 }
+.error{
+    background-color: red;
+    padding: 5px;
+    padding-left: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
