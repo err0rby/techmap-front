@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./signin.module.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import eye from "../../assets/icons/eye.png";
 import { authSignIn } from "../../features/applicationSlice";
@@ -9,6 +9,8 @@ import { authSignIn } from "../../features/applicationSlice";
 const SignIn = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const error = useSelector((state) => state.application.error);
 
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
@@ -22,15 +24,19 @@ const SignIn = () => {
 
   const handleSignIn = (e) => {
     e.preventDefault();
-    dispatch(authSignIn({login,password}));
-    navigate("/");
+    dispatch(authSignIn({ login, password }))
+    // navigate('/')
   };
 
   return (
     <div className={styles.signIn}>
       <h1>Sign In</h1>
       <div className={styles.inputs}>
-        <form data-testid="form" onSubmit={handleSignIn} className={styles.Form}>
+        <form
+          data-testid="form"
+          onSubmit={handleSignIn}
+          className={styles.Form}
+        >
           <span>Имя</span>
           <input
             data-testid="login"
@@ -50,6 +56,7 @@ const SignIn = () => {
             onChange={handleSetPass}
             className={styles.Input}
           />
+          {error ? <div className={styles.error}><span>! {error}</span></div> : ''}
           <span className={styles.support}>Забыли пароль?</span>
 
           <button data-testid="submit" type="submit">
