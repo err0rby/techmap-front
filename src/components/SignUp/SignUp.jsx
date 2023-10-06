@@ -15,6 +15,7 @@ const SignUp = () => {
   const [phone, setPhone] = useState("");
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
+  const [role, setRole] = useState("");
 
   const handleSetLogin = (e) => {
     setLogin(e.target.value);
@@ -31,10 +32,13 @@ const SignUp = () => {
   const handleSetPhone = (e) => {
     setPhone(e.target.value);
   };
+  const handleSetRole = (e) => {
+    setRole(e.target.value);
+  };
 
   const handleSignUp = (e) => {
     e.preventDefault();
-    dispatch(authSignUp({ login, password })); 
+    dispatch(authSignUp({ login, password }));
     navigate("/");
   };
 
@@ -44,18 +48,75 @@ const SignUp = () => {
       <div className={styles.inputs}>
         <form onSubmit={handleSignUp} className={styles.Form}>
           <span>Имя</span>
-          <input type="text" value={name} onChange={handleSetName} className={styles.Input} />
+          <input
+            type="text"
+            value={name}
+            onChange={handleSetName}
+            className={styles.Input}
+          />
           <span>Email</span>
-          <input type="text" value={email} onChange={handleSetEmail} className={styles.Input} />
+          <input
+            type="text"
+            value={email}
+            onChange={handleSetEmail}
+            className={styles.Input}
+          />
           <span>Номер телефона</span>
-          <input type="text" value={phone} onChange={handleSetPhone} className={styles.Input} />
+          <input
+            type="text"
+            value={phone}
+            onChange={handleSetPhone}
+            className={styles.Input}
+          />
           <span>Логин</span>
-          <input type="text" value={login} onChange={handleSetLogin} className={styles.Input} />
+          <input
+            type="text"
+            value={login}
+            onChange={handleSetLogin}
+            className={styles.Input}
+          />
+          <div className={styles.role}>
+            <div>
+              <input
+                type="radio"
+                name="role"
+                id="Ученик"
+                value="Ученик"
+                onChange={handleSetRole}
+              />
+              Ученик
+            </div>
+            <div>
+              <input
+                type="radio"
+                name="role"
+                id="Преподаватель"
+                value="Преподаватель"
+                onChange={handleSetRole}
+              />
+              Преподаватель
+            </div>
+            <div>
+              <input
+                type="radio"
+                name="role"
+                id="Админ"
+                value="Админ"
+                onChange={handleSetRole}
+              />
+              Админ
+            </div>
+          </div>
           <div className={styles.password}>
             <span>Пароль</span>
             <img src={eye} alt="eye" className={styles.eye} />
           </div>
-          <input type="password" value={password} onChange={handleSetPass} className={styles.Input} />
+          <input
+            type="password"
+            value={password}
+            onChange={handleSetPass}
+            className={styles.Input}
+          />
           <span className={styles.support}>Забыли пароль?</span>
           <button type="submit">Зарегистрироваться</button>
           <Link to={`/authorization/signIn`}>
